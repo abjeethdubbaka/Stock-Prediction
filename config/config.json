@@ -1,0 +1,11 @@
+{
+  "model_type": "Random Forest",
+  "store_or_read_stock_data": "E:/Stock Price Prediction System/data",
+  "results_directory": "E:/Stock Price Prediction System/results",
+  "sentiment_analysis": false,
+  "prediction_periods": ["1D", "1W", "1M"],
+  "adjustment_factors": {
+    "buy": 0.98,
+    "sell": 1.02
+  }
+}
