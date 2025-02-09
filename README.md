@@ -1,7 +1,6 @@
 # Stock Price Prediction and Trading Strategy System
 
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 A machine learning system for stock price prediction incorporating technical indicators and news sentiment analysis, with trading strategy simulation capabilities.
 
