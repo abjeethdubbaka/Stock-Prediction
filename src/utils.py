@@ -1,4 +1,7 @@
 import os
+import logging
+
+logger = logging.getLogger('StockPrediction')
 
 
 def ensure_directory_exists(directory):
@@ -6,6 +9,7 @@ def ensure_directory_exists(directory):
     Ensure that the given directory exists.
     """
     if not os.path.exists(directory):
+        logger.info(f"Creating {directory}...")
         os.makedirs(directory)
 
 
@@ -14,6 +18,7 @@ def save_predictions_to_file(stock_ticker, best_buy_day, best_sell_day, buy_pric
     """
     Save the predictions for the given stock to a result file.
     """
+    logger.info("Saving Results...")
     prediction_output = (
             f"\n{stock_ticker} - {period} Prediction\n"
             f"Best Buy Date: {best_buy_day}\n"
@@ -28,4 +33,4 @@ def save_predictions_to_file(stock_ticker, best_buy_day, best_sell_day, buy_pric
     )
     with open(result_file, 'a') as f:
         f.write(prediction_output)
-    print(prediction_output)  # Also display on the console
+    # print(prediction_output)  # Also display on the console

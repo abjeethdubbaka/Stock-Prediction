@@ -1,6 +1,10 @@
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from src.config_loader import CONFIG
+import logging
+
+logger = logging.getLogger('StockPrediction')
 
 
 def train_model(data, model_choice, sentiment, period='1D'):
@@ -9,8 +13,8 @@ def train_model(data, model_choice, sentiment, period='1D'):
     including sentiment as a feature if available.
     """
     # Define base features
-    features = ['SMA_10', 'SMA_50', 'RSI', 'MACD', 'Volatility', 'Avg_Return', 'Volume_SMA', 'Volume']
-    if sentiment and 'Sentiment' in data.columns:
+    features = CONFIG["features"]
+    if sentiment and period == '1D':
         features.append('Sentiment')  # Add sentiment as a feature if available
 
     # Ensure all required features are in the dataset
@@ -32,6 +36,7 @@ def train_model(data, model_choice, sentiment, period='1D'):
         y_buy = data['Close'].shift(-22).rolling(window=22).min()  # Min price in the next month
         y_sell = data['Close'].shift(-22).rolling(window=22).max()  # Max price in the next month
     else:
+        logger.error("Invalid period. Choose from '1D', '1W', or '1M'.")
         raise ValueError("Invalid period. Choose from '1D', '1W', or '1M'.")
 
     # Drop NaNs from targets and align features
