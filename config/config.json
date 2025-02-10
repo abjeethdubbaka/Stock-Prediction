@@ -2,8 +2,20 @@
   "model_type": "Random Forest",
   "store_or_read_stock_data": "E:/Stock Price Prediction System/data",
   "results_directory": "E:/Stock Price Prediction System/results",
-  "sentiment_analysis": false,
+  "sentiment_analysis": true,
+  "news_info": "E:/Stock Price Prediction System/news",
+  "news_api_key": "",
+  "start_date" : "2020-01-01",
   "prediction_periods": ["1D", "1W", "1M"],
+  "features" : ["SMA_10", "SMA_50", "RSI", "MACD", "Volatility", "Avg_Return", "Volume_SMA", "Volume"],
+  "logging": {
+        "level": "DEBUG",
+        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        "date_format": "%Y-%m-%d %H:%M:%S",
+        "log_dir": "./logs",
+        "main_log": "stock_predictions.log",
+        "error_log": "errors.log"
+    },
   "adjustment_factors": {
     "buy": 0.98,
     "sell": 1.02

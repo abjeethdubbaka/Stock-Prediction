@@ -1,19 +1,23 @@
 import os
 import pandas as pd
 import yfinance as yf
-import numpy as np
+import json
+import logging
+import requests
 from datetime import datetime, timedelta
 from pandas.tseries.offsets import BDay
 from src.config_loader import CONFIG
-import requests
 from nltk.sentiment import SentimentIntensityAnalyzer
+from src.utils import ensure_directory_exists
+
+logger = logging.getLogger('StockPrediction')
 
 
-def load_and_preprocess_data(stock_ticker, sentiment_):
+def load_and_preprocess_data(stock_ticker, include_sentiment, sentiment_dir, api_key):
     """Load stock data from CSV or download it if missing or outdated."""
 
     raw_file_path = f"{CONFIG['store_or_read_stock_data']}/{stock_ticker}.csv"
-    print(f"Loading data for {stock_ticker} from file.")
+    logger.info(f"Loading data for {stock_ticker} from file.")
     data = None
     sentiment_score = 0
 
@@ -22,7 +26,7 @@ def load_and_preprocess_data(stock_ticker, sentiment_):
         try:
             # Load existing data
             data = pd.read_csv(raw_file_path, index_col=0, parse_dates=True)
-            print(f"Data loaded from {raw_file_path}.")
+            logger.info(f"Data loaded from {raw_file_path}.")
 
             # Ensure columns match expectations
             if 'Close' not in data.columns or not pd.api.types.is_numeric_dtype(data['Close']):
@@ -32,122 +36,207 @@ def load_and_preprocess_data(stock_ticker, sentiment_):
             latest_date = data.index.max()
             if isinstance(latest_date, pd.Timestamp):
                 latest_date = latest_date.date()
-            elif isinstance(latest_date, str):
-                latest_date = pd.to_datetime(latest_date).date()
             else:
-                raise ValueError(f"Unexpected type for latest_date: {type(latest_date)}")
+                latest_date = pd.to_datetime(latest_date).date()
 
             # Determine the last market day
             today = pd.Timestamp(datetime.now()).date()
-            last_market_day = pd.bdate_range(end=today, periods=1)[0].date()
+            last_market_day = pd.bdate_range(end=today, periods=2)[-2].date()
 
-            print(f"Latest date in data: {latest_date}")
-            print(f"Last market day: {last_market_day}")
+            logger.info(f"Latest date in data: {latest_date}")
+            logger.info(f"Last market day: {last_market_day}")
 
             # Fetch new data if the latest available date is before the last market day
             if latest_date < last_market_day:
-                print(f"Data for {stock_ticker} is not current. Fetching new data...")
+                logger.info(f"Data for {stock_ticker} is not current. Fetching new data...")
                 new_data = download_stock_data(stock_ticker,
-                                               start_date=(latest_date + timedelta(days=1)).strftime('%Y-%m-%d'))
-                if new_data is not None:
+                                               start_date=(pd.Timestamp(latest_date) + BDay(1)).strftime('%Y-%m-%d'))
+                if new_data is not None and not new_data.empty:
+                    # Add technical indicators for new rows only
+                    new_data = add_technical_indicators(new_data)
+                    logger.info('new_data', new_data)
                     data = pd.concat([data, new_data]).drop_duplicates()
-                    print(f"Data updated with new rows for {stock_ticker}.")
+                    logger.info(f"Data updated with new rows for {stock_ticker}.")
         except Exception as e:
-            print(f"Error loading or updating data for {stock_ticker}: {e}")
+            logger.error(f"Error loading or updating data for {stock_ticker}: {e}")
             data = download_stock_data(stock_ticker)
     else:
-        print(f"No existing data found for {stock_ticker}. Fetching new data...")
+        logger.info(f"No existing data found for {stock_ticker}. Fetching new data...")
         data = download_stock_data(stock_ticker)
+        logger.info(data.index.date)
+        if data is not None and not data.empty:
+            data = add_technical_indicators(data)
 
     if data is None or data.empty:
-        print(f"No data available for {stock_ticker}. Skipping.")
+        logger.warning(f"No data available for {stock_ticker}. Skipping.")
         return None, sentiment_score
 
     # Check and add missing indicators
     required_indicators = ['SMA_10', 'SMA_50', 'RSI', 'MACD', 'Volatility', 'Avg_Return', 'Volume_SMA', "Volume"]
     missing_indicators = [ind for ind in required_indicators if ind not in data.columns]
     if missing_indicators:
-        print(f"Adding missing indicators for {stock_ticker}: {missing_indicators}")
+        logger.info(f"Adding missing indicators for {stock_ticker}: {missing_indicators}")
         try:
             data = add_technical_indicators(data)
         except Exception as e:
-            print(f"Error adding indicators for {stock_ticker}: {e}")
+            logger.error(f"Error adding indicators for {stock_ticker}: {e}")
             return None, sentiment_score
 
     # Save updated data only if new rows or indicators are added
-    if missing_indicators or (latest_date and latest_date < last_market_day):
-        data.to_csv(raw_file_path)
-        print(f"Updated data saved to {raw_file_path}.")
+    data.to_csv(raw_file_path)
+    logger.info(f"Updated data saved to {raw_file_path}.")
 
-    # Update sentiment scores if enabled
-    if sentiment_ and ('Sentiment' not in data.columns or data['Sentiment'].iloc[-1] == 0):
-        sentiment_score = fetch_sentiment_for_today(stock_ticker, "your_newsapi_key")
-        data['Sentiment'] = sentiment_score
-        print(f"Sentiment scores added for {stock_ticker}.")
-        data.to_csv(raw_file_path)
-        print(f"Updated data with sentiment saved to {raw_file_path}.")
+    # Process sentiment if needed
+    sentiment_file = f"{sentiment_dir}/{stock_ticker}_sentiment.json"
+    ensure_directory_exists(sentiment_dir)
 
-    # Clean the data by removing rows with missing values
+    if include_sentiment:
+        if 'Sentiment' not in data.columns:
+            data['Sentiment'] = 0.0
+
+        today = pd.Timestamp(datetime.now()).normalize()
+        previous_business_day = pd.bdate_range(end=today, periods=2)[-2].date()
+        previous_business_day = pd.Timestamp(previous_business_day)
+
+        sentiment_data = {}
+        if os.path.exists(sentiment_file):
+            with open(sentiment_file, "r") as f:
+                sentiment_data = json.load(f)
+
+        if str(previous_business_day) in sentiment_data:
+            sentiment_score = sentiment_data[str(previous_business_day)]
+            logger.info(f"Using cached sentiment score ({sentiment_score}) for {previous_business_day}.")
+        else:
+            company_name, industry_keywords = get_stock_info(stock_ticker)
+            sentiment_score = get_market_sentiment(stock_ticker, sentiment_dir, api_key, company_name,
+                                                   industry_keywords)
+            sentiment_data[str(previous_business_day)] = sentiment_score
+            with open(sentiment_file, "w") as f:
+                json.dump(sentiment_data, f, indent=4)
+            logger.info(f"Sentiment score ({sentiment_score}) saved for {previous_business_day}.")
+
+        if previous_business_day in data.index:
+            data.loc[previous_business_day, "Sentiment"] = sentiment_score
+            data.to_csv(raw_file_path)
+        else:
+            logger.warning(f"Warning: Previous business day ({previous_business_day}) not in stock data. ")
+
+    # Clean data and drop NaNs
     data = data.dropna()
 
     return data, sentiment_score
 
 
-def download_stock_data(stock_ticker, start_date='2020-01-01', end_date=pd.to_datetime("today").strftime('%Y-%m-%d')):
+def get_stock_info(ticker):
+    stock = yf.Ticker(ticker)
+    info = stock.info
+
+    # Get company name and industry
+    company_name = info.get('longName', 'Unknown Company')
+    industry = info.get('industry', 'Unknown Industry')
+
+    # Generate industry keywords by splitting the industry string into words
+    industry_keywords = industry.split() if industry != 'Unknown Industry' else []
+
+    return company_name, industry_keywords
+
+
+def download_stock_data(stock_ticker, start_date=CONFIG["start_date"],
+                        end_date=pd.to_datetime("today").strftime('%Y-%m-%d')):
     """Download stock data from Yahoo Finance."""
-    print(f"Downloading data for {stock_ticker} from Yahoo Finance.")
+    logger.info(f"Downloading data for {stock_ticker} from Yahoo Finance.")
     try:
         stock_data = yf.download(stock_ticker, start=start_date, end=end_date)
     except Exception as e:
-        print(f"Error downloading data for {stock_ticker}: {e}")
+        logger.error(f"Error downloading data for {stock_ticker}: {e}")
         return pd.DataFrame()  # Return an empty DataFrame in case of an error
 
     if stock_data.empty:
-        print(f"No data found for {stock_ticker}.")
+        logger.info(f"No data found for {stock_ticker}.")
         return pd.DataFrame()  # Return an empty DataFrame if no data is found
 
     # Flatten multi-index columns, if present
     if isinstance(stock_data.columns, pd.MultiIndex):
         stock_data.columns = [col[0] if isinstance(col, tuple) else col for col in stock_data.columns]
-        print(f"Flattened columns: {stock_data.columns.tolist()}")
+        logger.info(f"Flattened columns: {stock_data.columns.tolist()}")
 
     # Save the downloaded data
-    save_path = f"E:/Stock Price Prediction System/data/{stock_ticker}.csv"
+    save_path = f"{CONFIG['store_or_read_stock_data']}/{stock_ticker}.csv"
     stock_data.to_csv(save_path)
-    print(f"Data for {stock_ticker} saved to {save_path}.")
+    logger.info(f"Data for {stock_ticker} saved to {save_path}.")
     return stock_data
 
 
-def fetch_sentiment_for_today(stock_ticker, newsapi_key):
-    """Fetch the sentiment score for the current day from NewsAPI."""
-    # Fetch market sentiment
-    sentiment_score = get_news_sentiment(stock_ticker, datetime.today(), newsapi_key)
-    return sentiment_score
+def get_market_sentiment(stock_ticker, directory, news_api_key, company_name, industry_keywords):
+    """Fetch market sentiment from News API and save it locally."""
+    today_date = datetime.now().strftime("%Y-%m-%d")
+    file_path = os.path.join(directory, f"{stock_ticker}_sentiment.json")
+    end_date = datetime.today().strftime('%Y-%m-%d')
+    start_date = (datetime.today() - timedelta(2)).strftime('%Y-%m-%d')
+    # Fetch sentiment using News API
+    query_keywords = construct_query(stock_ticker, company_name, industry_keywords)
 
+    logger.info(f"Fetching market sentiment for {stock_ticker}...using {query_keywords}")
 
-def get_news_sentiment(stock_ticker, date, api_key):
-    """Fetch sentiment from news API for a specific stock ticker."""
-    print(f"Fetching market sentiment for {stock_ticker} on {date}...")
-    sentiment_score = 0
+    # 1. Fetch sentiment from News API
+    sentiment_score_news_api = 0  # Default sentiment if no news found from News API
     try:
-        start_date = date.strftime('%Y-%m-%d')
-        end_date = (date + timedelta(days=1)).strftime('%Y-%m-%d')
-
-        newsapi_url = f'https://newsapi.org/v2/everything?q={stock_ticker}&from={start_date}&to={end_date}&apiKey={api_key}'
-        response = requests.get(newsapi_url)
+        url = (
+            f'https://newsapi.org/v2/everything?q={query_keywords}&'
+            f'from={start_date}&to={end_date}&sortBy=publishedAt&apiKey={news_api_key}'
+        )
+        logger.info(url)
+        response = requests.get(url)
         response.raise_for_status()
         articles = response.json().get('articles', [])
-
-        # Perform sentiment analysis
-        analyzer = SentimentIntensityAnalyzer()
-        sentiment_scores = [analyzer.polarity_scores(article['title'])['compound'] for article in articles if
-                            'title' in article]
-        sentiment_score = sum(sentiment_scores) / len(sentiment_scores) if sentiment_scores else 0
-        print(f"Sentiment score for {stock_ticker} on {date}: {sentiment_score}")
+        sentiment_score_news_api = analyze_sentiment(articles)
     except Exception as e:
-        print(f"Error fetching sentiment for {stock_ticker}: {e}")
+        logger.info(f"Error fetching sentiment for {stock_ticker} from News API: {e}")
 
+    # Save sentiment data locally
+    sentiment_data = {
+        "date": today_date,
+        "stock_ticker": stock_ticker,
+        "sentiment_score": sentiment_score_news_api
+    }
+    save_sentiment_to_file(sentiment_data, file_path)
+
+    return sentiment_score_news_api
+
+
+def save_sentiment_to_file(sentiment_data, file_path):
+    """Save sentiment data to a file."""
+    with open(file_path, 'w') as f:
+        json.dump(sentiment_data, f, indent=4)
+    logger.info(f"Sentiment data saved to {file_path}.")
+
+
+def analyze_sentiment(articles):
+    """Analyze sentiment of the articles using VADER SentimentIntensityAnalyzer."""
+    analyzer = SentimentIntensityAnalyzer()
+    sentiment_score = 0
+    if articles:
+        for article in articles[:5]:  # Limit to the top 5 articles
+            text = article.get('title', '') + " " + article.get('description', '')
+            sentiment_score += analyzer.polarity_scores(text)['compound']
+        sentiment_score /= len(articles[:5])  # Average sentiment score
     return sentiment_score
+
+
+def construct_query(stock_ticker, company_name, industry_keywords):
+    """
+    Construct a meaningful query for fetching market sentiment.
+    """
+    # Base query using stock ticker and company name
+    query_parts = [stock_ticker, company_name]
+
+    # Add industry-specific keywords
+    query_parts.extend(industry_keywords)
+
+    # Combine with OR logical operator
+    query = " OR ".join(query_parts)
+    financial_focus = '("financial news" OR "earnings report" OR "market analysis")'
+    return f'{query} AND {financial_focus}'
 
 
 def add_technical_indicators(data):
@@ -206,21 +295,5 @@ def add_technical_indicators(data):
         return data
 
     except Exception as e:
-        print(f"Error adding indicators: {e}")
+        logger.error(f"Error adding indicators: {e}")
         return None  # Return None if any error occurs
-
-
-def update_data(existing_data, stock_ticker, config):
-    """Update outdated data"""
-    last_date = existing_data.index.max().date()
-    today = datetime.now().date()
-
-    if last_date < today:
-        new_data = download_stock_data(
-            stock_ticker,
-            start=(last_date + timedelta(days=1)).strftime('%Y-%m-%d'),
-            config=config
-        )
-        if not new_data.empty:
-            return pd.concat([existing_data, new_data]).drop_duplicates()
-    return existing_data

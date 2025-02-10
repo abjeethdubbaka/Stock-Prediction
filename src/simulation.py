@@ -1,5 +1,7 @@
 import pandas as pd
-from pandas.tseries.offsets import BDay
+import logging
+
+logger = logging.getLogger('StockPrediction')
 
 
 def simulate_future_prices(model_buy, model_sell, data, feature_columns, period='1W'):
@@ -7,14 +9,14 @@ def simulate_future_prices(model_buy, model_sell, data, feature_columns, period=
     Simulate future prices dynamically using trained models for buy and sell, considering only market open days.
     Enforces that the sell day must occur after the buy day.
     """
-    # Determine the number of future business days to simulate
+    # Determine the number of future trading days to simulate
     num_days = 5 if period == '1W' else 22  # 5 business days for 1 week, 22 for 1 month
 
     # Generate future business days starting from the last available date in the dataset
     last_date = data.index[-1]
-    future_dates = pd.bdate_range(start=last_date + BDay(1), periods=num_days)
+    future_dates = pd.date_range(start=last_date + pd.Timedelta(days=1), periods=num_days, freq='B')
 
-    print(f"Simulating future prices for {num_days} market days starting from {last_date}...")
+    logger.info(f"Simulating future prices for {num_days} market days starting from {last_date}...")
 
     predicted_buy_prices = []
     predicted_sell_prices = []
@@ -34,9 +36,9 @@ def simulate_future_prices(model_buy, model_sell, data, feature_columns, period=
         predicted_sell_prices.append(predicted_sell_price)
 
         # Log the predictions
-        print(f"Day {i + 1} ({future_date.strftime('%Y-%m-%d')}):")
-        print(f"  Predicted Buy Price: {predicted_buy_price:.2f}")
-        print(f"  Predicted Sell Price: {predicted_sell_price:.2f}")
+        logger.info(f"Day {i + 1} ({future_date.strftime('%Y-%m-%d')}):")
+        logger.info(f"  Predicted Buy Price: {predicted_buy_price:.2f}")
+        logger.info(f"  Predicted Sell Price: {predicted_sell_price:.2f}")
 
         # Update the last data point for the next iteration
         prev_close = last_data_point['Close']
@@ -66,7 +68,7 @@ def simulate_future_prices(model_buy, model_sell, data, feature_columns, period=
     best_buy_day = future_dates[best_buy_idx]
     best_sell_day = future_dates[best_sell_idx]
 
-    print(f"\nBest Buy Day: {best_buy_day.strftime('%Y-%m-%d')} with Price: {predicted_buy_prices[best_buy_idx]:.2f}")
-    print(f"Best Sell Day: {best_sell_day.strftime('%Y-%m-%d')} with Price: {predicted_sell_prices[best_sell_idx]:.2f}")
+    logger.info(f"\nBest Buy Day: {best_buy_day.strftime('%Y-%m-%d')} with Price: {predicted_buy_prices[best_buy_idx]:.2f}")
+    logger.info(f"Best Sell Day: {best_sell_day.strftime('%Y-%m-%d')} with Price: {predicted_sell_prices[best_sell_idx]:.2f}")
 
     return best_buy_day, best_sell_day, predicted_buy_prices, predicted_sell_prices
