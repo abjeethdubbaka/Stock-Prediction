@@ -13,6 +13,7 @@ from services.analytics_service import (
     analyze_holding_periods,
     generate_advanced_recommendations,generate_personalized_learning
 )
+from src.prediction import process_stocks_for_predictions
 from metrix import calculate_metrics
 from sqlalchemy import func
 # Configure logging
@@ -31,18 +32,31 @@ def home():
 
 @main_bp.route('/predict', methods=['POST'])
 def predict():
+    print("Start")
     form = PredictionForm()
+    print(f"Form submitted? {form.is_submitted()}")  # Should be True
+    print(f"Form validate? {form.validate()}")  # Should be True
+    print(f"Form errors: {form.errors}")
+    print("CSRF token exists:", 'csrf_token' in request.form)
+    # print("CSRF token valid:", form._csrf.())
+    if not form.is_submitted():
+        flash('Invalid form submission method', 'danger')
+        return redirect(url_for('main.home'))
     if form.validate_on_submit():
+        print('3')
         symbol = form.symbol.data
         try:
-            from src.prediction import predict_stock
-            prediction = predict_stock(symbol)
+            print('4')
+            prediction = process_stocks_for_predictions(symbol)
             flash(f'Prediction for {symbol}: {prediction}', 'success')
         except Exception as e:
             flash(f'Error generating prediction: {str(e)}', 'danger')
+            print("failed")
         return redirect(url_for('main.home'))
     else:
-        flash('Invalid input. Please check the symbol.', 'danger')
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash(f'{field}: {error}', 'danger')
         return redirect(url_for('main.home'))
 
 

@@ -59,5 +59,8 @@ class CloseTradeForm(FlaskForm):
 
 
 class PredictionForm(FlaskForm):
-    symbol = StringField('Stock Symbol', validators=[DataRequired(), Length(max=10)])
+    symbol = StringField('Stock Symbol', validators=[
+        DataRequired(message="Symbol is required"),
+        Length(max=10)
+    ], filters=[lambda x: x.strip() if x else x])
     submit = SubmitField('Predict')

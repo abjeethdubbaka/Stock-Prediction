@@ -4,11 +4,13 @@ from models import db, User  # Import db from models
 import os
 from pathlib import Path
 from datetime import timedelta
+from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
 
 # Configuration
 app.config['SECRET_KEY'] = os.urandom(24)
+csrf = CSRFProtect(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(os.path.abspath(os.path.dirname(__file__)),
                                                                     'instance', 'users.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

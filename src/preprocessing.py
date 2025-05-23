@@ -191,7 +191,7 @@ def load_historical_data(stock_ticker, raw_file_path, alpha_vantage_key, polygon
 def download_live_data(stock_ticker, cache_path, alpha_vantage_key, polygon_key):
     logger.info(f"Downloading live data for {stock_ticker} from Alpha Vantage.")
     print(f"Downloading live data for {stock_ticker}")
-    max_retries = 5
+    max_retries = 1
     ts = TimeSeries(key=alpha_vantage_key, output_format='pandas')
     for attempt in range(max_retries):
         try:
@@ -219,7 +219,8 @@ def download_live_data(stock_ticker, cache_path, alpha_vantage_key, polygon_key)
             print(f"Error downloading live data (attempt {attempt + 1}): {e}")
             if "invalid api call" in str(e).lower():
                 print(
-                    "Invalid API key or parameters. Please verify your Alpha Vantage API key at https://www.alphavantage.co/.")
+                    "Invalid API key or parameters. Please verify your Alpha Vantage API key at "
+                    "https://www.alphavantage.co/.")
                 break
             if "rate limit" in str(e).lower() or "thank you for using alpha vantage" in str(e).lower():
                 time.sleep(12 * (2 ** attempt))
@@ -291,7 +292,8 @@ def download_stock_data(stock_ticker, start_date=CONFIG["start_date"],
             print(f"Error downloading historical data (attempt {attempt + 1}): {e}")
             if "invalid api call" in str(e).lower():
                 print(
-                    "Invalid API key or parameters. Please verify your Alpha Vantage API key at https://www.alphavantage.co/.")
+                    "Invalid API key or parameters. Please verify your Alpha Vantage API key at "
+                    "https://www.alphavantage.co/.")
                 break
             if "rate limit" in str(e).lower() or "thank you for using alpha vantage" in str(e).lower():
                 time.sleep(12 * (2 ** attempt))

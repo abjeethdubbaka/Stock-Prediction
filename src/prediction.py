@@ -7,7 +7,7 @@ from src.preprocessing import load_and_preprocess_data
 from src.model import train_model
 from src.simulation import simulate_future_prices
 from src.utils import ensure_directory_exists
-
+import pandas as pd
 logger = logging.getLogger('StockPrediction')
 
 

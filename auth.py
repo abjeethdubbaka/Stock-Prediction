@@ -11,7 +11,6 @@ auth_bp = Blueprint('auth', __name__)
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
-
     form = LoginForm()
 
     if form.validate_on_submit():

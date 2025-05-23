@@ -116,12 +116,13 @@
                     <div class="card-body">
                         <h3 class="card-title mb-4">Try Our Predictor</h3>
                         <form action="{{ url_for('main.predict') }}" method="POST">
+                            {{ form.hidden_tag() }}
                             <div class="mb-3">
                                 <label for="ticker" class="form-label">Stock Symbol</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bi bi-tag"></i></span>
                                     <input type="text" class="form-control form-control-lg" id="ticker"
-                                           name="ticker" placeholder="e.g. AAPL, TSLA" {% if not current_user.is_authenticated %}disabled{% endif %} required>
+                                           name="symbol" placeholder="e.g. AAPL, TSLA" {% if not current_user.is_authenticated %}disabled{% endif %} required>
                                 </div>
                             </div>
 
