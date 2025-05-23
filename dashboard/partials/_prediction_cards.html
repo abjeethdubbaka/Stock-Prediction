@@ -1,0 +1,27 @@
+{% for stock in current_user.stocks %}
+<div class="col-md-4 mb-3">
+    <div class="card prediction-card {{ 'bullish' if stock.prediction > 0 else 'bearish' }}">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title mb-0">{{ stock.symbol }}</h5>
+                <span class="badge bg-{{ 'success' if stock.prediction > 0 else 'danger' }}">
+                    {{ 'Bullish' if stock.prediction > 0 else 'Bearish' }}
+                </span>
+            </div>
+            <p class="text-muted small">{{ stock.name }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h4 class="mb-0">${{ stock.current_price }}</h4>
+                    <small class="text-{{ 'success' if stock.change > 0 else 'danger' }}">
+                        {{ '+' if stock.change > 0 }}{{ stock.change }}%
+                    </small>
+                </div>
+                <div class="text-end">
+                    <small class="text-muted">1W Prediction</small>
+                    <h5 class="mb-0">${{ stock.predicted_price }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

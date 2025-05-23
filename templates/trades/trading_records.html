@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Trading Records - TradeRecorder{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h1>Trading Records</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="mb-3">
+        <a href="{{ url_for('main.new_trade') }}" class="btn btn-primary">Add New Trade</a>
+    </div>
+
+    {% if trades %}
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Trade Type</th>
+                    <th>Reason</th>
+                    <th>Entry Price</th>
+                    <th>Exit Price</th>
+                    <th>Quantity</th>
+                    <th>Entry Date</th>
+                    <th>Exit Date</th>
+                    <th>Profit/Loss</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in trades %}
+                    <tr>
+                        <td>{{ trade.symbol }}</td>
+                        <td>{{ trade.trade_type.value }}</td>
+                        <td>{{ trade.reason.value.capitalize() }}</td>
+                        <td>{{ "%.2f" % trade.entry_price }}</td>
+                        <td>{{ "%.2f" % trade.exit_price if trade.exit_price else "-" }}</td>
+                        <td>{{ trade.quantity }}</td>
+                        <td>{{ trade.entry_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>{{ trade.exit_date.strftime('%Y-%m-%d %H:%M:%S') if trade.exit_date else "-" }}</td>
+                        <td>
+                            {% if trade.profit_loss is not none %}
+                                {{ "%.2f" % trade.profit_loss }}
+                                {% if trade.is_win() %}
+                                    <span class="badge bg-success">Win</span>
+                                {% else %}
+                                    <span class="badge bg-danger">Loss</span>
+                                {% endif %}
+                            {% else %}
+                                Open
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if not trade.exit_date %}
+                                <a href="{{ url_for('main.close_trade', trade_id=trade.id) }}" class="btn btn-sm btn-outline-success">Close</a>
+                            {% endif %}
+                            <a href="{{ url_for('main.edit_trade', trade_id=trade.id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% if pagination %}
+            <nav aria-label="Page navigation">
+                {{ pagination.links }}
+            </nav>
+        {% endif %}
+    {% else %}
+        <p>No trades found. <a href="{{ url_for('main.new_trade') }}">Add a new trade</a>.</p>
+    {% endif %}
+</div>
+{% endblock %}

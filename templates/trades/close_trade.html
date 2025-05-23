@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1>Close Trade</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.exit_price.label(class="form-label") }}
+            {{ form.exit_price(class="form-control" + (" is-invalid" if form.exit_price.errors else "")) }}
+            {% for error in form.exit_price.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.exit_date.label(class="form-label") }}
+            {{ form.exit_date(class="form-control" + (" is-invalid" if form.exit_date.errors else ""), type="datetime-local", value=form.exit_date.data.strftime('%Y-%m-%dT%H:%M:%S') if form.exit_date.data else datetime.now().strftime('%Y-%m-%dT%H:%M:%S')) }}
+            {% for error in form.exit_date.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.fees.label(class="form-label") }}
+            {{ form.fees(class="form-control" + (" is-invalid" if form.fees.errors else "")) }}
+            {% for error in form.fees.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.notes.label(class="form-label") }}
+            {{ form.notes(class="form-control" + (" is-invalid" if form.notes.errors else "")) }}
+            {% for error in form.notes.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+<script>
+    // Ensure exit date defaults to current time
+    document.addEventListener('DOMContentLoaded', function() {
+        const exitDate = document.querySelector('input[name="exit_date"]');
+        const now = new Date().toISOString().slice(0, 16);
+        if (!exitDate.value) exitDate.value = now;
+    });
+</script>
+{% endblock %}

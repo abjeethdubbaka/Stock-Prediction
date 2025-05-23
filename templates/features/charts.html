@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Charts - TradeRecorder{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h1>Trading Charts</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% if current_user.is_authenticated %}
+        <div class="mb-4">
+            <h3>Your Trading Performance</h3>
+            <p>Visualize your trading activity with charts (coming soon).</p>
+        </div>
+
+        <!-- Placeholder Chart Card -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 fw-normal">Profit/Loss Trend</h4>
+            </div>
+            <div class="card-body">
+                {% if trades %}
+                    <p>Chart placeholder: Showing profit/loss for {{ trades|length }} trades.</p>
+                    <ul class="list-unstyled">
+                        {% for trade in trades[:5] %}
+                            <li>{{ trade.symbol }}:
+                                {% if trade.profit_loss() is not none %}
+                                    {{ "%.2f" % trade.profit_loss() }} {% if trade.is_win() %}(Win){% else %}(Loss){% endif %}
+                                {% else %}
+                                    Open
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <p><small>Full chart implementation pending.</small></p>
+                {% else %}
+                    <p>No trades found. <a href="{{ url_for('main.new_trade') }}">Add a new trade</a> to visualize your performance.</p>
+                {% endif %}
+            </div>
+        </div>
+
+    {% else %}
+        <div class="alert alert-info">
+            Please <a href="{{ url_for('auth.login') }}">log in</a> or <a href="{{ url_for('auth.register') }}">register</a> to view your trading charts.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

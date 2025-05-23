@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1>{{ title }}</h1>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.symbol.label(class="form-label") }}
+            {{ form.symbol(class="form-control" + (" is-invalid" if form.symbol.errors else "")) }}
+            {% for error in form.symbol.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.trade_type.label(class="form-label") }}
+            {{ form.trade_type(class="form-select" + (" is-invalid" if form.trade_type.errors else "")) }}
+            {% for error in form.trade_type.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.reason.label(class="form-label") }}
+            {{ form.reason(class="form-select" + (" is-invalid" if form.reason.errors else "")) }}
+            {% for error in form.reason.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.entry_price.label(class="form-label") }}
+            {{ form.entry_price(class="form-control" + (" is-invalid" if form.entry_price.errors else "")) }}
+            {% for error in form.entry_price.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.exit_price.label(class="form-label") }}
+            {{ form.exit_price(class="form-control" + (" is-invalid" if form.exit_price.errors else "")) }}
+            {% for error in form.exit_price.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.quantity.label(class="form-label") }}
+            {{ form.quantity(class="form-control" + (" is-invalid" if form.quantity.errors else "")) }}
+            {% for error in form.quantity.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.entry_date.label(class="form-label") }}
+            {{ form.entry_date(class="form-control" + (" is-invalid" if form.entry_date.errors else ""), type="datetime-local", value=form.entry_date.data.strftime('%Y-%m-%dT%H:%M:%S') if form.entry_date.data else datetime.now().strftime('%Y-%m-%dT%H:%M:%S')) }}
+            {% for error in form.entry_date.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.exit_date.label(class="form-label") }}
+            {{ form.exit_date(class="form-control" + (" is-invalid" if form.exit_date.errors else ""), type="datetime-local", value=form.exit_date.data.strftime('%Y-%m-%dT%H:%M:%S') if form.exit_date.data else datetime.now().strftime('%Y-%m-%dT%H:%M:%S')) }}
+            {% for error in form.exit_date.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.stop_loss.label(class="form-label") }}
+            {{ form.stop_loss(class="form-control" + (" is-invalid" if form.stop_loss.errors else "")) }}
+            {% for error in form.stop_loss.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.take_profit.label(class="form-label") }}
+            {{ form.take_profit(class="form-control" + (" is-invalid" if form.take_profit.errors else "")) }}
+            {% for error in form.take_profit.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.fees.label(class="form-label") }}
+            {{ form.fees(class="form-control" + (" is-invalid" if form.fees.errors else "")) }}
+            {% for error in form.fees.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            {{ form.notes.label(class="form-label") }}
+            {{ form.notes(class="form-control" + (" is-invalid" if form.notes.errors else "")) }}
+            {% for error in form.notes.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+        </div>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+<script>
+    // Ensure date inputs default to current time or trade data
+    document.addEventListener('DOMContentLoaded', function() {
+        const entryDate = document.querySelector('input[name="entry_date"]');
+        const exitDate = document.querySelector('input[name="exit_date"]');
+        const now = new Date().toISOString().slice(0, 16);
+        if (!entryDate.value) entryDate.value = now;
+        if (!exitDate.value) exitDate.value = now;
+    });
+</script>
+{% endblock %}

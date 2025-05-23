@@ -1,0 +1,15 @@
+2025-03-14 23:51:22 - StockPrediction - ERROR - Error processing AAPL: Too Many Requests. Rate limited. Try after a while.
+2025-04-29 12:40:59 - StockPrediction - ERROR - Error processing AAPL: name 'self' is not defined
+2025-04-29 12:40:59 - StockPrediction - ERROR - Prediction failed: base.html
+2025-04-29 12:56:55 - StockPrediction - ERROR - Prediction failed: base.html
+2025-04-29 12:59:56 - StockPrediction - ERROR - Prediction failed: 'dict object' has no attribute 'buy_price'
+2025-04-29 13:01:50 - StockPrediction - ERROR - Prediction failed: must be real number, not list
+2025-04-29 13:07:22 - StockPrediction - ERROR - Prediction failed: must be real number, not list
+2025-04-29 13:11:13 - StockPrediction - ERROR - Error processing ['AAPL']: 'RangeIndex' object has no attribute 'date'
+2025-04-29 13:13:15 - StockPrediction - ERROR - Prediction failed: 'results' is undefined
+2025-04-29 13:16:13 - StockPrediction - ERROR - Prediction failed: 'results' is undefined
+2025-05-02 21:43:11 - StockPrediction - ERROR - Error processing AAPL: [Errno 13] Permission denied: 'E:/Stock Price Prediction System/data/AAPL.csv'
+2025-05-02 21:43:35 - StockPrediction - ERROR - Prediction failed for user reddy1431289@gmail.com: Could not build url for endpoint 'home'. Did you mean 'main.home' instead?
+2025-05-02 21:51:38 - StockPrediction - ERROR - Prediction failed for user reddy1431289@gmail.com: Could not build url for endpoint 'home'. Did you mean 'main.home' instead?
+2025-05-02 22:52:01 - StockPrediction - ERROR - Prediction failed for user reddy1431289@gmail.com: Could not build url for endpoint 'home'. Did you mean 'main.home' instead?
+2025-05-02 22:54:01 - StockPrediction - ERROR - Prediction failed for user reddy1431289@gmail.com: Could not build url for endpoint 'home'. Did you mean 'main.home' instead?

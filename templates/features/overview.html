@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block title %}Trading Overview - TradeMaster Pro{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="header-content">
+            <h1>Trading Dashboard</h1>
+            <p class="last-updated">Last updated: {{ now.strftime('%b %d, %Y %H:%M') }}</p>
+        </div>
+        <div class="header-actions">
+            <a href="{{ url_for('main.new_trade') }}" class="btn-primary">
+                <i class="bi bi-plus-circle"></i> New Trade
+            </a>
+        </div>
+    </div>
+
+    <!-- Key Metrics -->
+    <div class="metrics-section">
+        <div class="metric-card profit">
+            <div class="metric-icon">
+                <i class="bi bi-check-circle"></i>
+            </div>
+            <div class="metric-content">
+                <div class="metric-value">{{ "%.1f"|format(metrics.win_rate) }}%</div>
+                <div class="metric-label">Win Rate</div>
+            </div>
+        </div>
+
+        <div class="metric-card {{ 'profit' if metrics.risk_reward >= 1.5 else 'warning' }}">
+            <div class="metric-icon">
+                <i class="bi bi-arrow-left-right"></i>
+            </div>
+            <div class="metric-content">
+                <div class="metric-value">{{ "%.2f"|format(metrics.risk_reward) }}:1</div>
+                <div class="metric-label">Risk/Reward</div>
+            </div>
+        </div>
+
+        <div class="metric-card {{ 'profit' if metrics.expectancy > 0 else 'loss' }}">
+            <div class="metric-icon">
+                <i class="bi bi-graph-up"></i>
+            </div>
+            <div class="metric-content">
+                <div class="metric-value">${{ "%.2f"|format(metrics.expectancy) }}</div>
+                <div class="metric-label">Expectancy</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Daily Performance Pockets -->
+    <div class="daily-pockets-container">
+        <div class="section-header">
+            <h2><i class="bi bi-calendar3"></i> Daily Performance</h2>
+        </div>
+        <div class="daily-pockets-scroll">
+            <div class="daily-pockets">
+                {% for day in last_10_days %}
+                <div class="daily-pocket {{ 'profit' if day.profit > 0 else 'loss' if day.profit < 0 else 'neutral' }}">
+                    <div class="pocket-date">{{ day.date.strftime('%a %d') }}</div>
+                    <div class="pocket-amount">{{ "${:,.0f}".format(day.profit) }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Insights Section -->
+    <div class="insights-section">
+        <!-- Performance Insights -->
+        <div class="insights-card">
+            <div class="card-header">
+                <h2><i class="bi bi-speedometer2"></i> Performance Insights</h2>
+                <div class="time-filter">
+                    <select class="form-select">
+                        <option>Last 30 Days</option>
+                        <option>Last 90 Days</option>
+                        <option>All Time</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-body">
+                {% if recommendations %}
+                <div class="recommendations-grid">
+                    {% for rec in recommendations %}
+                    <div class="recommendation {{ rec.priority }}">
+                        <div class="priority-badge">{{ rec.priority|upper }}</div>
+                        <h4>{{ rec.title }}</h4>
+                        <p>{{ rec.insight }}</p>
+                        <div class="recommendation-footer">
+                            <span class="action-text">{{ rec.recommendation }}</span>
+                            {% if rec.action.type == 'filter' %}
+                            <a href="{{ url_for('main.trading_records', filter=rec.action.target) }}" class="action-link">
+                                Analyze <i class="bi bi-chevron-right"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="empty-state">
+                    <i class="bi bi-info-circle"></i>
+                    <p>Complete more trades to unlock personalized insights</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Learning Resources -->
+        <div class="insights-card">
+            <div class="card-header">
+                <h2><i class="bi bi-journal-bookmark"></i> Recommended Learning</h2>
+            </div>
+            <div class="card-body">
+                <div class="resources-grid">
+                    {% for resource in learning_resources %}
+                    <div class="resource {{ resource.type }}">
+                        <div class="resource-header">
+                            <span class="resource-badge">{{ resource.type|title }}</span>
+                            {% if resource.duration %}
+                            <span class="duration">{{ resource.duration }}</span>
+                            {% endif %}
+                        </div>
+                        <h4>{{ resource.title }}</h4>
+                        <p>{{ resource.focus }}</p>
+                        <a href="{{ resource.url }}" class="resource-link">
+                            {% if resource.type == 'course' %}
+                            Start Course <i class="bi bi-play-circle"></i>
+                            {% else %}
+                            Read Now <i class="bi bi-book"></i>
+                            {% endif %}
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="activity-section">
+        <div class="section-header">
+            <h2><i class="bi bi-clock-history"></i> Recent Activity</h2>
+            <a href="{{ url_for('main.trading_records') }}" class="view-all">View All <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        {% if trades %}
+        <div class="trades-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Type</th>
+                        <th>Entry</th>
+                        <th>Exit</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trade in trades %}
+                    <tr class="{{ 'profit' if trade.is_win() else 'loss' }}">
+                        <td>{{ trade.symbol }}</td>
+                        <td><span class="trade-type {{ trade.trade_type.value }}">{{ trade.trade_type.value|upper }}</span></td>
+                        <td>${{ "%.2f"|format(trade.entry_price) }}</td>
+                        <td>{% if trade.exit_price %}${{ "%.2f"|format(trade.exit_price) }}{% else %}-{% endif %}</td>
+                        <td>
+                            {% if trade.profit_loss is not none %}
+                            <span class="result-pill {{ 'profit' if trade.is_win() else 'loss' }}">
+                                ${{ "%.2f"|format(trade.profit_loss) }}
+                            </span>
+                            {% else %}
+                            <span class="result-pill pending">Active</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <i class="bi bi-journal-x"></i>
+            <h3>No trades recorded yet</h3>
+            <p>Start by adding your first trade to see analytics</p>
+            <a href="{{ url_for('main.new_trade') }}" class="btn-primary">
+                <i class="bi bi-plus-circle"></i> Add Trade
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

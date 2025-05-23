@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">User Profile</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="{{ url_for('static', filename='images/default-profile.png') }}"
+                                 class="rounded-circle img-thumbnail mb-3"
+                                 width="150" alt="Profile">
+                            <h4>{{ user.username }}</h4>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Account Information</h5>
+                                    <p><strong>Email:</strong> {{ user.email or 'Not provided' }}</p>
+                                    <p><strong>Member since:</strong> {{ user.created_at.strftime('%B %d, %Y') }}</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Statistics</h5>
+                                    <p><strong>Predictions made:</strong> {{ user.stocks|length }}</p>
+                                    <p><strong>Trades recorded:</strong> {{ user.trades|length }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

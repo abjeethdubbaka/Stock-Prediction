@@ -1,0 +1,39 @@
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5 class="mb-3">StockSense</h5>
+                <p class="text-muted">AI-powered stock predictions and trading analytics platform.</p>
+            </div>
+            <div class="col-md-2 mb-4 mb-md-0">
+                <h5 class="mb-3">Navigation</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="{{ url_for('app.home') }}" class="text-white">Home</a></li>
+                    {% if current_user.is_authenticated %}
+                    <li class="mb-2"><a href="{{ url_for('dashboard') }}" class="text-white">Dashboard</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-md-2 mb-4 mb-md-0">
+                <h5 class="mb-3">Legal</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-white">Terms</a></li>
+                    <li class="mb-2"><a href="#" class="text-white">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="mb-3">Connect</h5>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-github fs-4"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4 bg-secondary">
+        <div class="text-center text-muted">
+            <small>&copy; {{ now.year }} StockSense. All rights reserved.</small>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,42 @@
+<div class="sticky-top pt-3">
+    <div class="d-flex flex-column flex-shrink-0">
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="{{ url_for('main.dashboard') }}" class="nav-link active">
+                    <i class="bi bi-speedometer2 me-2"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('main.predictions') }}" class="nav-link">
+                    <i class="bi bi-graph-up me-2"></i>
+                    Predictions
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('main.trade_journal') }}" class="nav-link">
+                    <i class="bi bi-journal-text me-2"></i>
+                    Trade Journal
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('main.alerts') }}" class="nav-link">
+                    <i class="bi bi-bell me-2"></i>
+                    Alerts
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('main.watchlists') }}" class="nav-link">
+                    <i class="bi bi-collection me-2"></i>
+                    Watchlists
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('main.settings') }}" class="nav-link">
+                    <i class="bi bi-gear me-2"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

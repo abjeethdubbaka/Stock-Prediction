@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+
+{% block title %}StockSense - AI Stock Predictions{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-gradient {
+        background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        min-height: 100vh;
+    }
+
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .prediction-card {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 1rem;
+    }
+
+    .ticker-badge {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .ticker-badge:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card {
+        transition: transform 0.3s ease;
+        height: 100%;
+        border-radius: 0.75rem;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .icon-lg {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        border-radius: 50%;
+    }
+
+    .auth-message {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .hero-gradient {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .hero-content {
+            margin-bottom: 2rem;
+        }
+
+        .prediction-card {
+            margin-top: 2rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero-gradient text-white py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0 hero-content">
+                <h1 class="display-3 fw-bold mb-4">AI-Powered Stock Intelligence</h1>
+                <p class="lead mb-4">Harness the power of machine learning to make smarter investment decisions with real-time predictions and sentiment analysis.</p>
+
+                {% if not current_user.is_authenticated %}
+                <!-- In the auth message section, add home URL -->
+<div class="auth-message">
+    <p class="mb-0">Return to <a href="{{ url_for('main.home') }}" class="text-white fw-bold">home</a> or
+    <a href="{{ url_for('auth.login') }}" class="text-white fw-bold">login</a> or
+    <a href="{{ url_for('auth.register') }}" class="text-white fw-bold">register</a></p>
+</div>
+                {% endif %}
+
+<!--                <div class="d-flex flex-wrap gap-3 mb-4">-->
+<!--                    <a href="{{ url_for('auth.login') }}" class="btn btn-light btn-lg px-4">-->
+<!--                        <i class="bi bi-box-arrow-in-right me-2"></i> Sign In-->
+<!--                    </a>-->
+<!--                    <a href="{{ url_for('auth.register') }}" class="btn btn-outline-light btn-lg px-4">-->
+<!--                        <i class="bi bi-person-plus me-2"></i> Register-->
+<!--                    </a>-->
+<!--                </div>-->
+
+                <div class="d-flex align-items-center text-white-50">
+                    <i class="bi bi-shield-check me-2"></i>
+                    <small>256-bit encryption · GDPR compliant</small>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card prediction-card text-white p-4">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Try Our Predictor</h3>
+                        <form action="{{ url_for('main.predict') }}" method="POST">
+                            <div class="mb-3">
+                                <label for="ticker" class="form-label">Stock Symbol</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-tag"></i></span>
+                                    <input type="text" class="form-control form-control-lg" id="ticker"
+                                           name="ticker" placeholder="e.g. AAPL, TSLA" {% if not current_user.is_authenticated %}disabled{% endif %} required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="period" class="form-label">Prediction Period</label>
+                                <select class="form-select form-select-lg" id="period" name="period" {% if not current_user.is_authenticated %}disabled{% endif %}>
+                                    <option value="1D">1 Day</option>
+                                    <option value="1W" selected>1 Week</option>
+                                    <option value="1M">1 Month</option>
+                                    <option value="3M">3 Months</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100" {% if not current_user.is_authenticated %}disabled{% endif %}>
+                                <i class="bi bi-lightning-charge me-2"></i>
+                                {% if current_user.is_authenticated %}Predict{% else %}Sign In Required{% endif %}
+                            </button>
+                        </form>
+
+                        <div class="mt-4">
+                            <p class="mb-2">Popular stocks:</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                {% for ticker in ['AAPL', 'MSFT', 'GOOG', 'AMZN', 'TSLA', 'META', 'NVDA', 'JPM'] %}
+                                    <span class="ticker-badge badge bg-light text-dark py-2 px-3 rounded-pill"
+                                          onclick="setTicker('{{ ticker }}')">
+                                        {{ ticker }}
+                                    </span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">How StockSense Works</h2>
+            <p class="lead text-muted">Our AI analyzes multiple data points to give you the most accurate predictions</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-circle mb-4 mx-auto">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h4 class="mb-3">Technical Analysis</h4>
+                        <p class="text-muted">Advanced indicators including SMA, RSI, MACD and volatility metrics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-lg bg-success bg-opacity-10 text-success rounded-circle mb-4 mx-auto">
+                            <i class="bi bi-emoji-smile"></i>
+                        </div>
+                        <h4 class="mb-3">Sentiment Analysis</h4>
+                        <p class="text-muted">Real-time news sentiment scoring from multiple sources</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-lg bg-info bg-opacity-10 text-info rounded-circle mb-4 mx-auto">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h4 class="mb-3">AI Predictions</h4>
+                        <p class="text-muted">Machine learning models trained on historical market data</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-lg bg-warning bg-opacity-10 text-warning rounded-circle mb-4 mx-auto">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+                        <h4 class="mb-3">Actionable Insights</h4>
+                        <p class="text-muted">Clear buy/sell recommendations with confidence scores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <img src="{{ url_for('static', filename='images/stock-chart.png') }}" alt="Stock prediction visualization" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">Precision Forecasting with Deep Learning</h2>
+                <p class="lead text-muted mb-4">Our models are trained on decades of market data to identify subtle patterns that human analysts might miss.</p>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <h5 class="mb-0">Technical Indicators</h5>
+                        </div>
+                        <p class="text-muted small">RSI, MACD, Bollinger Bands, and 20+ other indicators analyzed</p>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <h5 class="mb-0">Fundamental Data</h5>
+                        </div>
+                        <p class="text-muted small">P/E ratios, earnings reports, and company financials incorporated</p>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <h5 class="mb-0">Market Sentiment</h5>
+                        </div>
+                        <p class="text-muted small">Real-time analysis of news and social media sentiment</p>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <h5 class="mb-0">Macro Trends</h5>
+                        </div>
+                        <p class="text-muted small">Economic indicators and sector performance considered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function setTicker(ticker) {
+    const tickerInput = document.getElementById('ticker');
+    if (tickerInput && !tickerInput.disabled) {
+        tickerInput.value = ticker;
+        tickerInput.focus();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-uppercase ticker input
+    const tickerInput = document.getElementById('ticker');
+    if (tickerInput) {
+        tickerInput.addEventListener('input', function() {
+            this.value = this.value.toUpperCase();
+        });
+    }
+
+    // Make popular tickers clickable
+    document.querySelectorAll('.ticker-badge').forEach(badge => {
+        badge.addEventListener('click', function() {
+            setTicker(this.textContent.trim());
+        });
+    });
+});
+</script>
+{% endblock %}

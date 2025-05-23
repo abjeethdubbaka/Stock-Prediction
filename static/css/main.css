@@ -1,0 +1,273 @@
+/* Base Styles */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --light-bg: #f8f9fa;
+  --dark-bg: #212529;
+  --sidebar-width: 250px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+/* Sidebar Styles */
+.sidebar-wrapper {
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.sidebar-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-card .card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-card .card-body {
+  padding: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.sidebar-card .nav {
+  padding: 0.5rem 0;
+}
+
+.sidebar-card .nav-link {
+  padding: 12px 20px;
+  color: #495057;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-card .nav-link:hover {
+  background-color: #f8f9fa;
+  color: var(--primary-color);
+}
+
+.sidebar-card .nav-link.active {
+  background-color: #e9ecef;
+  color: var(--primary-color);
+  font-weight: 500;
+  border-left: 3px solid var(--primary-color);
+}
+
+.sidebar-card .bi {
+  font-size: 1.1rem;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* Profile Link Specific Styles */
+.sidebar-card .profile-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.sidebar-card .profile-link:hover {
+  background-color: #f0f8ff;
+  color: #1e6f9f;
+}
+
+.sidebar-card .profile-link:hover i.bi-person {
+  transform: scale(1.1);
+}
+
+.sidebar-card .profile-link.active {
+  background-color: #e6f2ff;
+  color: #0a58ca;
+  border-left: 3px solid #0a58ca;
+}
+
+.sidebar-card .profile-link.active::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #0a58ca;
+  border-radius: 50%;
+}
+
+/* Main Content Area */
+.main-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-left: 20px;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card .card-header {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+/* Stock Cards */
+.stock-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.stock-card.positive {
+  border-left-color: var(--success-color);
+}
+
+.stock-card.negative {
+  border-left-color: var(--danger-color);
+}
+
+/* Forms */
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar-wrapper {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Utility Classes */
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.rounded-lg {
+  border-radius: 12px !important;
+}
+
+/* Scrollbar styling (for webkit browsers) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+<style>
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.card-header.bg-white {
+    background-color: white;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Maintain existing table styles */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.table-hover tbody tr:hover {
+    color: #212529;
+    background-color: rgba(0, 0, 0, 0.075);
+}
+</style>
+
+/* Recommendation cards */
+.card-border-success {
+    border-left: 4px solid #28a745;
+}
+.card-border-warning {
+    border-left: 4px solid #ffc107;
+}
+.card-border-danger {
+    border-left: 4px solid #dc3545;
+}
+.card-border-info {
+    border-left: 4px solid #17a2b8;
+}
+
+/* Learning resources */
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+.list-group-item h6 {
+    color: #343a40;
+    font-weight: 600;
+}

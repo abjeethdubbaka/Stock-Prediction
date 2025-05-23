@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1>Performance Analytics</h1>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Win Rate</h5>
+                    <p class="card-text">{{ '%.2f' % win_rate }}%</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Average Profit/Loss</h5>
+                    <p class="card-text {{ 'text-success' if avg_pl > 0 else 'text-danger' if avg_pl < 0 else 'text-muted' }}">
+                        ${{ '%.2f' % avg_pl }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Monthly Performance</h5>
+                    <canvas id="monthlyPerformanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('monthlyPerformanceChart').getContext('2d');
+        const monthlyPerformance = {{ monthly_performance|tojson }};
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: monthlyPerformance.map(item => item.date),
+                datasets: [{
+                    label: 'Profit/Loss ($)',
+                    data: monthlyPerformance.map(item => item.profit_loss),
+                    backgroundColor: monthlyPerformance.map(item => item.profit_loss > 0 ? 'rgba(75, 192, 192, 0.5)' : 'rgba(255, 99, 132, 0.5)'),
+                    borderColor: monthlyPerformance.map(item => item.profit_loss > 0 ? 'rgba(75, 192, 192, 1)' : 'rgba(255, 99, 132, 1)'),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Profit/Loss ($)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Month'
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

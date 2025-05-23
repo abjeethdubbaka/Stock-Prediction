@@ -1,0 +1,1285 @@
+2025-03-14 23:51:19 - StockPrediction - INFO - Starting stock prediction process
+2025-03-14 23:51:19 - StockPrediction - INFO - 
+Processing AAPL
+2025-03-14 23:51:19 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-03-14 23:51:19 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-03-14 23:51:19 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-03-14 23:51:19 - StockPrediction - INFO - Last market day: 2025-03-13
+2025-03-14 23:51:19 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-03-14 23:51:19 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-03-14 23:51:22 - StockPrediction - INFO - No data found for AAPL.
+2025-03-14 23:51:22 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-03-14 23:51:22 - StockPrediction - ERROR - Error processing AAPL: Too Many Requests. Rate limited. Try after a while.
+2025-03-14 23:51:22 - StockPrediction - INFO - All predictions have been saved to E:/Stock Price Prediction System/results\predictions_2025-03-14_23-51-19.txt.
+2025-03-14 23:51:22 - StockPrediction - INFO - ******************-----------*******************.
+2025-03-14 23:51:22 - StockPrediction - INFO - ******************-----------*******************.
+2025-03-14 23:53:53 - StockPrediction - INFO - Starting stock prediction process
+2025-03-14 23:53:53 - StockPrediction - INFO - 
+Processing AAPL
+2025-03-14 23:53:53 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-03-14 23:53:53 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-03-14 23:53:53 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-03-14 23:53:53 - StockPrediction - INFO - Last market day: 2025-03-13
+2025-03-14 23:53:53 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-03-14 23:53:53 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-03-14 23:53:54 - StockPrediction - INFO - No data found for AAPL.
+2025-03-14 23:53:54 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-03-14 23:53:54 - StockPrediction - INFO - Sentiment score for AAPL: 0
+2025-03-14 23:53:54 - StockPrediction - INFO - Start train and test Model
+2025-03-14 23:54:00 - StockPrediction - INFO - 
+Simulating for 1 Week...
+2025-03-14 23:54:00 - StockPrediction - INFO - RandomForestRegressor(random_state=42)
+2025-03-14 23:54:00 - StockPrediction - INFO - Simulating future prices for 5 market days starting from 2025-02-07 00:00:00...
+2025-03-14 23:54:00 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-03-14 23:54:00 - StockPrediction - INFO -   Predicted Buy Price: 227.32
+2025-03-14 23:54:00 - StockPrediction - INFO -   Predicted Sell Price: 235.63
+2025-03-14 23:54:00 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-03-14 23:54:00 - StockPrediction - INFO -   Predicted Buy Price: 226.96
+2025-03-14 23:54:00 - StockPrediction - INFO -   Predicted Sell Price: 237.35
+2025-03-14 23:54:00 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-03-14 23:54:00 - StockPrediction - INFO -   Predicted Buy Price: 226.99
+2025-03-14 23:54:00 - StockPrediction - INFO -   Predicted Sell Price: 237.29
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 227.41
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 235.96
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 227.66
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 235.96
+2025-03-14 23:54:01 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 226.96
+2025-03-14 23:54:01 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 237.29
+2025-03-14 23:54:01 - StockPrediction - INFO - 
+Simulating for 1 Month...
+2025-03-14 23:54:01 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.30
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:01 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:01 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-03-14 23:54:02 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-03-14 23:54:02 - StockPrediction - INFO -   Predicted Sell Price: 251.98
+2025-03-14 23:54:02 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 237.16
+2025-03-14 23:54:02 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 252.40
+2025-03-14 23:54:02 - StockPrediction - INFO - 
+Performing Next Day Prediction...
+2025-03-14 23:54:02 - StockPrediction - INFO - Next Business Day: 2025-02-10
+2025-03-14 23:54:02 - StockPrediction - INFO - Next Day Predicted Buy Price (Actual):  229.59
+2025-03-14 23:54:02 - StockPrediction - INFO - Next Day Predicted Sell Price (Actual):  233.17
+2025-03-14 23:54:02 - StockPrediction - INFO - Next Day Predicted Buy Price (Adjusted):  224.99
+2025-03-14 23:54:02 - StockPrediction - INFO - Next Day Predicted Sell Price (Adjusted):  237.83
+2025-03-14 23:54:02 - StockPrediction - INFO - 
+AAPL - Next Day Prediction
+2025-03-14 23:54:02 - StockPrediction - INFO - Prediction Date: 2025-02-10
+Actual Predicted Buy Price:  229.59
+Actual Predicted Sell Price:  233.17
+Adjusted Buy Price:  224.99
+Adjusted Sell Price:  237.83
+Accuracy (Buy):  99.45%
+Accuracy (Sell):  99.43%
+Sentiment Score:  0.00
+
+2025-03-14 23:54:02 - StockPrediction - INFO - 
+AAPL - 1 Week Prediction: 
+2025-03-14 23:54:02 - StockPrediction - INFO - Best Buy Date: 2025-02-11
+2025-03-14 23:54:02 - StockPrediction - INFO - Best Sell Date: 2025-02-12
+2025-03-14 23:54:02 - StockPrediction - INFO - Saving Results...
+2025-03-14 23:54:03 - StockPrediction - INFO - 
+AAPL - 1 Month Prediction: 
+2025-03-14 23:54:03 - StockPrediction - INFO - Best Buy Date: 2025-02-11
+2025-03-14 23:54:03 - StockPrediction - INFO - Best Sell Date: 2025-02-12
+2025-03-14 23:54:03 - StockPrediction - INFO - Saving Results...
+2025-03-14 23:54:04 - StockPrediction - INFO - All predictions have been saved to E:/Stock Price Prediction System/results\predictions_2025-03-14_23-53-53.txt.
+2025-03-14 23:54:04 - StockPrediction - INFO - ******************-----------*******************.
+2025-03-14 23:54:04 - StockPrediction - INFO - ******************-----------*******************.
+2025-04-29 12:30:25 - StockPrediction - INFO - Starting Flask app
+2025-04-29 12:30:29 - StockPrediction - INFO - Starting Flask app
+2025-04-29 12:31:32 - StockPrediction - INFO - Processing prediction for AAPL
+2025-04-29 12:31:32 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 12:31:32 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 12:31:32 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 12:31:32 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 12:31:32 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 12:31:32 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 12:31:32 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 12:31:37 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 12:31:37 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 12:31:37 - StockPrediction - INFO - Sentiment score for AAPL: 0
+2025-04-29 12:31:37 - StockPrediction - INFO - Start train and test Model
+2025-04-29 12:31:41 - StockPrediction - INFO - 
+Simulating for 1 Week...
+2025-04-29 12:31:41 - StockPrediction - INFO - RandomForestRegressor(random_state=42)
+2025-04-29 12:31:41 - StockPrediction - INFO - Simulating future prices for 5 market days starting from 2025-02-07 00:00:00...
+2025-04-29 12:31:41 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 12:31:41 - StockPrediction - INFO -   Predicted Buy Price: 227.32
+2025-04-29 12:31:41 - StockPrediction - INFO -   Predicted Sell Price: 235.58
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 226.96
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 226.99
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 237.30
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 227.41
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 227.66
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-04-29 12:31:42 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 226.96
+2025-04-29 12:31:42 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 237.30
+2025-04-29 12:31:42 - StockPrediction - INFO - 
+Simulating for 1 Month...
+2025-04-29 12:31:42 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.30
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.36
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Buy Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO -   Predicted Sell Price: 252.40
+2025-04-29 12:31:42 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 237.16
+2025-04-29 12:31:42 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 252.82
+2025-04-29 12:31:42 - StockPrediction - INFO - 
+Performing Next Day Prediction...
+2025-04-29 12:31:42 - StockPrediction - INFO - Next Business Day: 2025-02-10
+2025-04-29 12:31:42 - StockPrediction - INFO - Next Day Predicted Buy Price (Actual):  229.59
+2025-04-29 12:31:42 - StockPrediction - INFO - Next Day Predicted Sell Price (Actual):  233.17
+2025-04-29 12:31:42 - StockPrediction - INFO - Next Day Predicted Buy Price (Adjusted):  224.99
+2025-04-29 12:31:42 - StockPrediction - INFO - Next Day Predicted Sell Price (Adjusted):  237.83
+2025-04-29 12:31:42 - StockPrediction - INFO - 
+AAPL - Next Day Prediction
+2025-04-29 12:31:42 - StockPrediction - INFO - Prediction Date: 2025-02-10
+Actual Predicted Buy Price:  229.59
+Actual Predicted Sell Price:  233.17
+Adjusted Buy Price:  224.99
+Adjusted Sell Price:  237.83
+Accuracy (Buy):  99.45%
+Accuracy (Sell):  99.43%
+Sentiment Score:  0.00
+
+2025-04-29 12:31:42 - StockPrediction - INFO - 
+AAPL - 1 Week Prediction: 
+2025-04-29 12:31:42 - StockPrediction - INFO - Best Buy Date: 2025-02-11
+2025-04-29 12:31:42 - StockPrediction - INFO - Best Sell Date: 2025-02-12
+2025-04-29 12:31:42 - StockPrediction - INFO - Saving Results...
+2025-04-29 12:31:42 - StockPrediction - INFO - 
+AAPL - 1 Month Prediction: 
+2025-04-29 12:31:42 - StockPrediction - INFO - Best Buy Date: 2025-02-11
+2025-04-29 12:31:42 - StockPrediction - INFO - Best Sell Date: 2025-02-12
+2025-04-29 12:31:42 - StockPrediction - INFO - Saving Results...
+2025-04-29 12:31:42 - StockPrediction - INFO - All predictions have been saved to E:/Stock Price Prediction System/results\predictions_2025-04-29_12-31-32.txt.
+2025-04-29 12:31:42 - StockPrediction - INFO - ******************-----------*******************.
+2025-04-29 12:31:42 - StockPrediction - INFO - ******************-----------*******************.
+2025-04-29 12:40:57 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 12:40:57 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 12:40:57 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 12:40:57 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 12:40:57 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 12:40:57 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 12:40:57 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 12:40:57 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 12:40:58 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 12:40:58 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 12:40:59 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:40:59 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 12:40:59 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 12:40:59 - StockPrediction - ERROR - Error processing AAPL: name 'self' is not defined
+2025-04-29 12:40:59 - StockPrediction - ERROR - Prediction failed: base.html
+2025-04-29 12:56:50 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 12:56:50 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 12:56:50 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 12:56:50 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 12:56:50 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 12:56:50 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 12:56:50 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 12:56:50 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 12:56:51 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 12:56:51 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 12:56:54 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:54 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:54 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:56:55 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 12:56:55 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 12:56:55 - StockPrediction - ERROR - Prediction failed: base.html
+2025-04-29 12:59:51 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 12:59:51 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 12:59:51 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 12:59:51 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 12:59:51 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 12:59:51 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 12:59:51 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 12:59:51 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 12:59:52 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 12:59:52 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 12:59:55 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 12:59:55 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 12:59:55 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 12:59:55 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 12:59:55 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 12:59:55 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 12:59:55 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 12:59:56 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 12:59:56 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 12:59:56 - StockPrediction - ERROR - Prediction failed: 'dict object' has no attribute 'buy_price'
+2025-04-29 13:01:45 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 13:01:45 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 13:01:45 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 13:01:45 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:01:45 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 13:01:45 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 13:01:45 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 13:01:45 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 13:01:46 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 13:01:46 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:01:50 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:01:50 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 13:01:50 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 13:01:50 - StockPrediction - ERROR - Prediction failed: must be real number, not list
+2025-04-29 13:07:18 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 13:07:18 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 13:07:18 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 13:07:18 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:07:18 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 13:07:18 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 13:07:18 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 13:07:18 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 13:07:19 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 13:07:19 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:07:22 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:07:22 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 13:07:22 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 13:07:22 - StockPrediction - ERROR - Prediction failed: must be real number, not list
+2025-04-29 13:09:27 - StockPrediction - INFO - Starting Flask app
+2025-04-29 13:11:12 - StockPrediction - INFO - Processing ['AAPL'] for 1D prediction
+2025-04-29 13:11:12 - StockPrediction - INFO - 
+Processing ['AAPL']
+2025-04-29 13:11:12 - StockPrediction - INFO - Loading data for ['AAPL'] from file.
+2025-04-29 13:11:12 - StockPrediction - INFO - No existing data found for ['AAPL']. Fetching new data...
+2025-04-29 13:11:12 - StockPrediction - INFO - Downloading data for ['AAPL'] from Yahoo Finance.
+2025-04-29 13:11:13 - StockPrediction - INFO - No data found for ['AAPL'].
+2025-04-29 13:11:13 - StockPrediction - ERROR - Error processing ['AAPL']: 'RangeIndex' object has no attribute 'date'
+2025-04-29 13:13:10 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 13:13:10 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 13:13:10 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 13:13:11 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:13:11 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 13:13:11 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 13:13:11 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 13:13:11 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 13:13:11 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 13:13:11 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:13:14 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 13:13:14 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 13:13:14 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 13:13:14 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 13:13:14 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 13:13:14 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 13:13:14 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:13:14 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:13:15 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 13:13:15 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 13:13:15 - StockPrediction - ERROR - Prediction failed: 'results' is undefined
+2025-04-29 13:16:09 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 13:16:09 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 13:16:09 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 13:16:09 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:16:09 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 13:16:09 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 13:16:09 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 13:16:09 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 13:16:10 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 13:16:10 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:16:13 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:16:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 13:16:13 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 13:16:13 - StockPrediction - ERROR - Prediction failed: 'results' is undefined
+2025-04-29 13:18:35 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 13:18:35 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 13:18:35 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 13:18:35 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:18:35 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 13:18:35 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 13:18:35 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 13:18:35 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 13:18:36 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 13:18:36 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:18:40 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:40 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:40 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 13:18:40 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 13:18:48 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 13:18:48 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 13:18:48 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 13:18:48 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:18:48 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 13:18:48 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 13:18:48 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 13:18:48 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 13:18:49 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 13:18:49 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:18:52 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 13:18:52 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 13:18:52 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 13:18:52 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 13:18:52 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 13:18:52 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 13:18:52 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 13:18:52 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 13:18:52 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 13:18:52 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 13:18:52 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 13:18:52 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:18:53 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:18:53 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 13:18:53 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-04-29 13:22:09 - StockPrediction - INFO - Processing AAPL for 1D prediction
+2025-04-29 13:22:09 - StockPrediction - INFO - 
+Processing AAPL
+2025-04-29 13:22:09 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-04-29 13:22:09 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:22:09 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-04-29 13:22:09 - StockPrediction - INFO - Last market day: 2025-04-28
+2025-04-29 13:22:09 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-04-29 13:22:09 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-04-29 13:22:10 - StockPrediction - INFO - No data found for AAPL.
+2025-04-29 13:22:10 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-04-29 13:22:13 - StockPrediction - INFO - Simulating future prices for 22 market days starting from 2025-02-07 00:00:00...
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 229.59
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.17
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.37
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 232.82
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.47
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.12
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.79
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.38
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.34
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 6 (2025-02-17):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.80
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.32
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 7 (2025-02-18):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.71
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.22
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 8 (2025-02-19):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 227.45
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 229.24
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 9 (2025-02-20):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 227.58
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 229.30
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 10 (2025-02-21):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 11 (2025-02-24):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.91
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.42
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 12 (2025-02-25):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 13 (2025-02-26):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 14 (2025-02-27):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 15 (2025-02-28):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 16 (2025-03-03):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 17 (2025-03-04):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 18 (2025-03-05):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 19 (2025-03-06):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 20 (2025-03-07):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 21 (2025-03-10):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - Day 22 (2025-03-11):
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Buy Price: 230.95
+2025-04-29 13:22:13 - StockPrediction - INFO -   Predicted Sell Price: 233.47
+2025-04-29 13:22:13 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-19 with Price: 227.45
+2025-04-29 13:22:13 - StockPrediction - INFO - Best Sell Day: 2025-02-25 with Price: 233.47
+2025-05-02 21:43:05 - StockPrediction - INFO - Processing AAPL for 1W prediction for user reddy1431289@gmail.com
+2025-05-02 21:43:05 - StockPrediction - INFO - 
+Processing AAPL
+2025-05-02 21:43:05 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-05-02 21:43:05 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 21:43:05 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-05-02 21:43:05 - StockPrediction - INFO - Last market day: 2025-05-01
+2025-05-02 21:43:05 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-05-02 21:43:05 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-05-02 21:43:11 - StockPrediction - INFO - No data found for AAPL.
+2025-05-02 21:43:11 - StockPrediction - ERROR - Error processing AAPL: [Errno 13] Permission denied: 'E:/Stock Price Prediction System/data/AAPL.csv'
+2025-05-02 21:43:31 - StockPrediction - INFO - Processing AAPL for 1W prediction for user reddy1431289@gmail.com
+2025-05-02 21:43:31 - StockPrediction - INFO - 
+Processing AAPL
+2025-05-02 21:43:31 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-05-02 21:43:31 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 21:43:31 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-05-02 21:43:31 - StockPrediction - INFO - Last market day: 2025-05-01
+2025-05-02 21:43:31 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-05-02 21:43:31 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-05-02 21:43:31 - StockPrediction - INFO - No data found for AAPL.
+2025-05-02 21:43:32 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 21:43:35 - StockPrediction - INFO - Simulating future prices for 5 market days starting from 2025-02-07 00:00:00...
+2025-05-02 21:43:35 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Buy Price: 227.32
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Sell Price: 235.58
+2025-05-02 21:43:35 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Buy Price: 226.96
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Sell Price: 237.36
+2025-05-02 21:43:35 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Buy Price: 226.99
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Sell Price: 237.30
+2025-05-02 21:43:35 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Buy Price: 227.41
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 21:43:35 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Buy Price: 227.66
+2025-05-02 21:43:35 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 21:43:35 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 226.96
+2025-05-02 21:43:35 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 237.30
+2025-05-02 21:43:35 - StockPrediction - ERROR - Prediction failed for user reddy1431289@gmail.com: Could not build url for endpoint 'home'. Did you mean 'main.home' instead?
+2025-05-02 21:51:34 - StockPrediction - INFO - Processing AAPL for 1W prediction for user reddy1431289@gmail.com
+2025-05-02 21:51:34 - StockPrediction - INFO - 
+Processing AAPL
+2025-05-02 21:51:34 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-05-02 21:51:34 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 21:51:34 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-05-02 21:51:34 - StockPrediction - INFO - Last market day: 2025-05-01
+2025-05-02 21:51:34 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-05-02 21:51:34 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-05-02 21:51:35 - StockPrediction - INFO - No data found for AAPL.
+2025-05-02 21:51:35 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 21:51:38 - StockPrediction - INFO - Simulating future prices for 5 market days starting from 2025-02-07 00:00:00...
+2025-05-02 21:51:38 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Buy Price: 227.32
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Sell Price: 235.58
+2025-05-02 21:51:38 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Buy Price: 226.96
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Sell Price: 237.36
+2025-05-02 21:51:38 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Buy Price: 226.99
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Sell Price: 237.30
+2025-05-02 21:51:38 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Buy Price: 227.41
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 21:51:38 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Buy Price: 227.66
+2025-05-02 21:51:38 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 21:51:38 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 226.96
+2025-05-02 21:51:38 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 237.30
+2025-05-02 21:51:38 - StockPrediction - ERROR - Prediction failed for user reddy1431289@gmail.com: Could not build url for endpoint 'home'. Did you mean 'main.home' instead?
+2025-05-02 22:51:55 - StockPrediction - INFO - Processing AAPL for 1W prediction for user reddy1431289@gmail.com
+2025-05-02 22:51:55 - StockPrediction - INFO - 
+Processing AAPL
+2025-05-02 22:51:55 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-05-02 22:51:55 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 22:51:55 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-05-02 22:51:55 - StockPrediction - INFO - Last market day: 2025-05-01
+2025-05-02 22:51:55 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-05-02 22:51:55 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-05-02 22:51:56 - StockPrediction - INFO - No data found for AAPL.
+2025-05-02 22:51:56 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 22:52:01 - StockPrediction - INFO - Simulating future prices for 5 market days starting from 2025-02-07 00:00:00...
+2025-05-02 22:52:01 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Buy Price: 227.32
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Sell Price: 235.58
+2025-05-02 22:52:01 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Buy Price: 226.96
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Sell Price: 237.36
+2025-05-02 22:52:01 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Buy Price: 226.99
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Sell Price: 237.30
+2025-05-02 22:52:01 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Buy Price: 227.41
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 22:52:01 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Buy Price: 227.66
+2025-05-02 22:52:01 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 22:52:01 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 226.96
+2025-05-02 22:52:01 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 237.30
+2025-05-02 22:52:01 - StockPrediction - ERROR - Prediction failed for user reddy1431289@gmail.com: Could not build url for endpoint 'home'. Did you mean 'main.home' instead?
+2025-05-02 22:53:55 - StockPrediction - INFO - Processing AAPL for 1W prediction for user reddy1431289@gmail.com
+2025-05-02 22:53:55 - StockPrediction - INFO - 
+Processing AAPL
+2025-05-02 22:53:55 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-05-02 22:53:55 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 22:53:55 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-05-02 22:53:55 - StockPrediction - INFO - Last market day: 2025-05-01
+2025-05-02 22:53:55 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-05-02 22:53:55 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-05-02 22:53:56 - StockPrediction - INFO - No data found for AAPL.
+2025-05-02 22:53:56 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 22:54:01 - StockPrediction - INFO - Simulating future prices for 5 market days starting from 2025-02-07 00:00:00...
+2025-05-02 22:54:01 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Buy Price: 227.32
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Sell Price: 235.58
+2025-05-02 22:54:01 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Buy Price: 226.96
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Sell Price: 237.36
+2025-05-02 22:54:01 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Buy Price: 226.99
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Sell Price: 237.30
+2025-05-02 22:54:01 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Buy Price: 227.41
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 22:54:01 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Buy Price: 227.66
+2025-05-02 22:54:01 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 22:54:01 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 226.96
+2025-05-02 22:54:01 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 237.30
+2025-05-02 22:54:01 - StockPrediction - ERROR - Prediction failed for user reddy1431289@gmail.com: Could not build url for endpoint 'home'. Did you mean 'main.home' instead?
+2025-05-02 22:54:53 - StockPrediction - INFO - Processing AAPL for 1W prediction for user reddy1431289@gmail.com
+2025-05-02 22:54:53 - StockPrediction - INFO - 
+Processing AAPL
+2025-05-02 22:54:53 - StockPrediction - INFO - Loading data for AAPL from file.
+2025-05-02 22:54:53 - StockPrediction - INFO - Data loaded from E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 22:54:53 - StockPrediction - INFO - Latest date in data: 2025-02-07
+2025-05-02 22:54:53 - StockPrediction - INFO - Last market day: 2025-05-01
+2025-05-02 22:54:53 - StockPrediction - INFO - Data for AAPL is not current. Fetching new data...
+2025-05-02 22:54:53 - StockPrediction - INFO - Downloading data for AAPL from Yahoo Finance.
+2025-05-02 22:54:53 - StockPrediction - INFO - No data found for AAPL.
+2025-05-02 22:54:53 - StockPrediction - INFO - Updated data saved to E:/Stock Price Prediction System/data/AAPL.csv.
+2025-05-02 22:54:57 - StockPrediction - INFO - Simulating future prices for 5 market days starting from 2025-02-07 00:00:00...
+2025-05-02 22:54:57 - StockPrediction - INFO - Day 1 (2025-02-10):
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Buy Price: 227.32
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Sell Price: 235.58
+2025-05-02 22:54:57 - StockPrediction - INFO - Day 2 (2025-02-11):
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Buy Price: 226.96
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Sell Price: 237.36
+2025-05-02 22:54:57 - StockPrediction - INFO - Day 3 (2025-02-12):
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Buy Price: 226.99
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Sell Price: 237.30
+2025-05-02 22:54:57 - StockPrediction - INFO - Day 4 (2025-02-13):
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Buy Price: 227.41
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 22:54:57 - StockPrediction - INFO - Day 5 (2025-02-14):
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Buy Price: 227.66
+2025-05-02 22:54:57 - StockPrediction - INFO -   Predicted Sell Price: 235.92
+2025-05-02 22:54:57 - StockPrediction - INFO - 
+Best Buy Day: 2025-02-11 with Price: 226.96
+2025-05-02 22:54:57 - StockPrediction - INFO - Best Sell Day: 2025-02-12 with Price: 237.30
